@@ -17,9 +17,12 @@ const HeroSection = () => {
             className="md:w-1/2"
             {...fadeInAnimation(0.1)}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
-              Software Developer & <span className="block">Problem Solver</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary">
+              AI Data Engineering
             </h1>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-primary">
+              i made it easy!
+            </h2>
             <p className="text-lg text-muted-foreground mb-8">
               I build exceptional digital experiences with clean, efficient code. 
               Focused on creating maintainable solutions for complex problems.
@@ -30,13 +33,6 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="#projects">View My Work</a>
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                asChild
-              >
-                <a href="#contact">Get In Touch</a>
               </Button>
             </div>
           </motion.div>
