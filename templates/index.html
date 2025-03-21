@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">AI Data Engineering</h1>
+            <h2 class="hero-subtitle">i made it easy!</h2>
+            <p class="hero-text mb-4">
+                Transforming complex data into actionable insights through innovative engineering solutions.
+                Specializing in AI-driven data pipelines and machine learning systems that scale.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project-filters mb-4">
+            <button class="btn btn-outline project-filter active" data-category="All">All</button>
+            <button class="btn btn-outline project-filter" data-category="Web Development">Web Dev</button>
+            <button class="btn btn-outline project-filter" data-category="Machine Learning">ML</button>
+        </div>
+        
+        <div class="project-grid">
+            {% for project in projects %}
+            <div class="project-card" data-category="{{ project.category }}">
+                <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-links mb-2">
+                        {% if project.liveUrl %}
+                        <a href="{{ project.liveUrl }}" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        {% endif %}
+                        {% if project.githubUrl %}
+                        <a href="{{ project.githubUrl }}" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="project-tags">
+                        {% for tag in project.tags %}
+                        <span class="project-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        
+        <div class="skill-grid">
+            {% for category in skill_categories %}
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-{{ category.icon }}"></i>
+                    {{ category.title }}
+                </h3>
+                <div class="skill-list">
+                    {% for skill in category.skills %}
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-{{ skill.icon }}"></i>
+                        </div>
+                        <span>{{ skill.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p class="mb-4">
+                    Have a project in mind or want to discuss a collaboration? 
+                    Feel free to reach out to me using the contact form or through any of the channels below.
+                </p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>{{ contact_info.email }}</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Location</strong>
+                        <p>{{ contact_info.location }}</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    {% if contact_info.social.github %}
+                    <a href="{{ contact_info.social.github }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if contact_info.social.linkedin %}
+                    <a href="{{ contact_info.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if contact_info.social.twitter %}
+                    <a href="{{ contact_info.social.twitter }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div id="form-message" class="form-message mb-3"></div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
