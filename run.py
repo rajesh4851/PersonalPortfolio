@@ -8,7 +8,7 @@ def run_app():
     # Pass the current time to the template context
     app.jinja_env.globals['now'] = datetime.datetime.now()
     # Run the app with the host and port configured
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 if __name__ == "__main__":
     run_app()
