@@ -7,5 +7,6 @@ dependencies = [
     "flask>=3.1.0",
     "flask-assets>=2.1.0",
     "gunicorn>=23.0.0",
+    "libsass>=0.23.0",
     "python-dotenv>=1.0.1",
 ]
