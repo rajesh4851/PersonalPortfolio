@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div style="text-align: center; padding: 5rem 0;">
+            <h1 class="mb-3">{{ error_code }}</h1>
+            <h2 class="mb-4">{{ error_message }}</h2>
+            <p class="mb-4">{{ error_description }}</p>
+            <a href="/" class="btn btn-primary">Return Home</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

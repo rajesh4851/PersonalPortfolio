@@ -1,0 +1,14 @@
+name = "Flask Portfolio"
+entrypoint = "run_flask_workflow.sh"
+language = "python3"
+run = "./run_flask_workflow.sh"
+hidden = [".config", ".git", "node_modules", "dist"]
+
+[nix]
+channel = "stable-24_05"
+
+[ports]
+5001 = "Flask Portfolio"
+
+[deployment]
+deploymentTarget = "static"
