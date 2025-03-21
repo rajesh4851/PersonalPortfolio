@@ -1,0 +1,4 @@
+[workflow]
+name = "Flask Portfolio"
+description = "Run Flask portfolio application on port 5001"
+command = "./run_flask_workflow.sh"
