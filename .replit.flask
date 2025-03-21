@@ -1,0 +1,12 @@
+run = "python run.py"
+language = "python3"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = "gunicorn app:app"
+deploymentTarget = "cloudrun"
+
+[ports]
+5001 = {onPublish = "open-browser"}
