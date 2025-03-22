@@ -1,15 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <rect width="800" height="400" fill="#1E1E1E"/>
-    <g fill="#569CD6" transform="translate(250, 180)">
-        <circle cx="80" cy="0" r="60"/>
-        <circle cx="200" cy="0" r="60"/>
-        <path d="M80,0 L200,0" stroke="#569CD6" stroke-width="8"/>
-        <path d="M0,0 L300,0 L300,20 L0,20 Z" transform="translate(0, -120)"/>
-        <text font-family="Arial" font-size="24" fill="#FFFFFF" text-anchor="middle" x="150" y="-100">
-            Sentiment Analysis
+    
+    <!-- Title -->
+    <text font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="400" y="60">
+        NLP Sentiment Analysis
+    </text>
+    
+    <!-- Main diagram -->
+    <g transform="translate(100, 120)">
+        <!-- Data Collection -->
+        <rect x="0" y="40" width="120" height="80" rx="8" fill="#333333" stroke="#569CD6" stroke-width="2"/>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="60" y="75">
+            Social Media
         </text>
-        <path d="M70,-15 L90,15 M70,15 L90,-15" stroke="#FFFFFF" stroke-width="6"/>
-        <path d="M190,-15 C190,-5 210,-5 210,-15 C220,-30 180,-30 190,-15" fill="#FFFFFF"/>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="60" y="95">
+            Data
+        </text>
+        
+        <!-- Speech bubbles -->
+        <path d="M30,60 C20,50 20,40 30,30 C40,20 60,20 70,30 C80,40 80,50 70,60 L75,70 L60,60 C50,70 40,70 30,60 Z" 
+              fill="#569CD6" opacity="0.6"/>
+        <path d="M90,50 C85,45 85,35 90,30 C95,25 105,25 110,30 C115,35 115,45 110,50 L112,55 L105,50 C100,55 95,55 90,50 Z" 
+              fill="#569CD6" opacity="0.8"/>
     </g>
+    
+    <!-- Arrow 1 -->
+    <g transform="translate(230, 160)">
+        <line x1="0" y1="0" x2="70" y2="0" stroke="#569CD6" stroke-width="2"/>
+        <polygon points="70,0 60,-5 60,5" fill="#569CD6"/>
+    </g>
+    
+    <!-- NLP Processing -->
+    <g transform="translate(310, 120)">
+        <rect width="150" height="80" rx="8" fill="#333333" stroke="#569CD6" stroke-width="2"/>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="75" y="60">
+            NLP Processing
+        </text>
+        
+        <!-- Code symbols -->
+        <text font-family="Arial, sans-serif" font-size="18" fill="#569CD6" x="40" y="85">
+            {code}
+        </text>
+        <line x1="110" y1="75" x2="130" y2="75" stroke="#569CD6" stroke-width="2"/>
+        <line x1="110" y1="80" x2="120" y2="80" stroke="#569CD6" stroke-width="2"/>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <g transform="translate(470, 160)">
+        <line x1="0" y1="0" x2="70" y2="0" stroke="#569CD6" stroke-width="2"/>
+        <polygon points="70,0 60,-5 60,5" fill="#569CD6"/>
+    </g>
+    
+    <!-- Sentiment Classification -->
+    <g transform="translate(550, 120)">
+        <rect width="150" height="80" rx="8" fill="#333333" stroke="#569CD6" stroke-width="2"/>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="75" y="60">
+            Sentiment
+        </text>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="75" y="80">
+            Classification
+        </text>
+        
+        <!-- Emotions -->
+        <circle cx="40" cy="50" r="15" fill="#333333" stroke="#569CD6" stroke-width="1"/>
+        <path d="M33,45 L37,45 M43,45 L47,45 M33,55 C33,60 47,60 47,55" stroke="#F44336" stroke-width="2" fill="none"/> <!-- Negative -->
+        
+        <circle cx="110" cy="50" r="15" fill="#333333" stroke="#569CD6" stroke-width="1"/>
+        <path d="M103,45 L107,45 M113,45 L117,45 M103,55 C103,50 117,50 117,55" stroke="#4CAF50" stroke-width="2" fill="none"/> <!-- Positive -->
+    </g>
+    
+    <!-- Output Section -->
+    <g transform="translate(200, 250)">
+        <rect width="400" height="80" rx="8" fill="#333333" stroke="#569CD6" stroke-width="2"/>
+        <text font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle" x="200" y="35">
+            Real-time Sentiment Dashboard
+        </text>
+        
+        <!-- Dashboard elements -->
+        <rect x="60" y="45" width="80" height="20" rx="2" fill="#569CD6" opacity="0.3"/>
+        <rect x="160" y="45" width="80" height="20" rx="2" fill="#569CD6" opacity="0.5"/>
+        <rect x="260" y="45" width="80" height="20" rx="2" fill="#569CD6" opacity="0.7"/>
+    </g>
+    
+    <!-- Arrows down -->
+    <g>
+        <line x1="400" y1="210" x2="400" y2="240" stroke="#569CD6" stroke-width="2"/>
+        <polygon points="400,240 395,230 405,230" fill="#569CD6"/>
+    </g>
+    
+    <!-- Annotations -->
+    <text font-family="Arial, sans-serif" font-size="12" fill="#AAAAAA" text-anchor="middle" x="400" y="350">
+        Analyzing social media text using natural language processing
+    </text>
 </svg>
