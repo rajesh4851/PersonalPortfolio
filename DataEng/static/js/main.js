@@ -1,15 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Debug logo image
+  // Debug and fix logo image
   const logoImage = document.querySelector('.logo-image');
   if (logoImage) {
     console.log('Logo image found:', logoImage);
     
+    // Force logo styling for better visibility
+    logoImage.style.height = '50px';
+    logoImage.style.width = 'auto';
+    logoImage.style.display = 'inline-block';
+    logoImage.style.backgroundColor = 'white';
+    logoImage.style.borderRadius = '50%';
+    logoImage.style.padding = '5px';
+    logoImage.style.boxShadow = '0 0 10px rgba(86, 156, 214, 0.5)';
+    
     logoImage.addEventListener('load', function() {
       console.log('Logo image loaded successfully');
+      // Make sure the logo is visible
+      logoImage.style.opacity = '1';
     });
     
     logoImage.addEventListener('error', function() {
       console.error('Failed to load logo image:', logoImage.src);
+      // Try to reload the image if it failed
+      setTimeout(() => {
+        logoImage.src = logoImage.src + '?t=' + new Date().getTime();
+      }, 500);
     });
   } else {
     console.error('Logo image element not found');
