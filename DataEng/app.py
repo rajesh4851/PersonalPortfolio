@@ -16,6 +16,25 @@ scss = Bundle('scss/main.scss', filters='scss', output='css/main.css')
 assets.register('scss_all', scss)
 
 # Define routes
+@app.route('/debug-logo')
+def debug_logo():
+    import os
+    logo_path = os.path.join(app.static_folder, 'images', 'logo.png')
+    exists = os.path.exists(logo_path)
+    file_info = {}
+    if exists:
+        file_info = {
+            'size': os.path.getsize(logo_path),
+            'permissions': oct(os.stat(logo_path).st_mode)[-3:],
+            'path': logo_path,
+            'static_url': app.static_url_path
+        }
+    return jsonify({
+        'file_exists': exists,
+        'static_folder': app.static_folder,
+        'file_info': file_info
+    })
+
 @app.route('/')
 def index():
     # Sample project data - this would be replaced by a database in a production app

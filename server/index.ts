@@ -6,7 +6,7 @@ import { spawn } from "child_process";
 const startFlaskApp = () => {
   log("Starting Flask application as a child process");
   
-  const flask = spawn("python", ["run.py"]);
+  const flask = spawn("python", ["DataEng/run.py"]);
   
   flask.stdout.on("data", (data) => {
     log(`Flask stdout: ${data}`);
