@@ -38,7 +38,7 @@ def index():
         },
         {
             "id": "3",
-            "title": "Portfolio Website",
+            "title": "AI Data Eng Website",
             "description": "Responsive portfolio website built with Flask and modern design principles",
             "image": "/static/images/projects/portfolio.svg",
             "tags": ["Python", "Flask", "Jinja2", "TailwindCSS"],

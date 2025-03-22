@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}AI Data Engineering Portfolio{% endblock %}</title>
+    <title>{% block title %}AI Data Eng{% endblock %}</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,10 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="#" class="logo">Portfolio</a>
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="AI Data Eng Logo" class="logo-image">
+                <span>AI Data Eng</span>
+            </a>
             
             <nav class="nav">
                 <a href="#hero" class="nav-link">Home</a>
@@ -58,7 +61,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">&copy; {{ now.year }} AI Data Engineering Portfolio. All rights reserved.</p>
+            <p class="footer-text">&copy; {{ now.year }} AI Data Eng. All rights reserved.</p>
         </div>
     </footer>
     
