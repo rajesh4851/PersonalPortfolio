@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Debug logo image
+  const logoImage = document.querySelector('.logo-image');
+  if (logoImage) {
+    console.log('Logo image found:', logoImage);
+    
+    logoImage.addEventListener('load', function() {
+      console.log('Logo image loaded successfully');
+    });
+    
+    logoImage.addEventListener('error', function() {
+      console.error('Failed to load logo image:', logoImage.src);
+    });
+  } else {
+    console.error('Logo image element not found');
+  }
+  
   // Header scroll effect
   const header = document.querySelector('.header');
   
